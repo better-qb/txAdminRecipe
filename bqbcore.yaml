@@ -23,7 +23,7 @@ tasks:
   # Prepare Database
   - action: connect_database
   - action: query_database
-    file: ./tmp/qbcore/qbcore.sql
+    file: ./tmp/qbcore/bqbcore.sql
 
   # STANDALONE
   - action: download_github
