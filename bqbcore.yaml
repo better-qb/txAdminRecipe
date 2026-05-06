@@ -1,14 +1,14 @@
 $engine: 3
 $onesync: on
-name: QBCore Framework
+name: BQBCore Framework
 version: 2.2.4
-author: JericoFx & Kakarot & Hamy
+author: JericoFx & Kakarot & Hamy | MNodified & Updated by Panda ( iampandaro )
 description: An advanced FiveM RP framework including jobs, gangs, housing & more!
 
 tasks:
   #  Download Base Files
   - action: download_github
-    src: https://github.com/qbcore-framework/txAdminRecipe
+    src: https://github.com/better-qb/txAdminRecipe
     ref: main
     dest: ./tmp/qbcore
 
@@ -35,7 +35,7 @@ tasks:
 
   - action: download_file
     path: ./tmp/files/oxmysql.zip
-    url: https://github.com/overextended/oxmysql/releases/download/v2.12.0/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/download/v2.14.1/oxmysql.zip
   - action: unzip
     dest: ./resources/[standalone]
     src: ./tmp/files/oxmysql.zip
@@ -50,7 +50,7 @@ tasks:
   - action: download_github
     dest: ./resources/[standalone]/bob74_ipl
     ref: master
-    src: https://github.com/qbcore-framework/bob74_ipl
+    src: https://github.com/Bob74/bob74_ipl/archive/refs/tags/2.6.0.zip
 
   - action: download_github
     dest: ./resources/[standalone]/safecracker
@@ -70,7 +70,7 @@ tasks:
   - action: download_github
     dest: ./resources/[standalone]/interact-sound
     ref: master
-    src: https://github.com/qbcore-framework/interact-sound
+    src: https://github.com/plunkettscott/interact-sound/archive/refs/tags/0.5.zip
 
   - action: download_github
     dest: ./resources/[standalone]/connectqueue
@@ -80,7 +80,7 @@ tasks:
   - action: download_github
     dest: ./resources/[standalone]/PolyZone
     ref: master
-    src: https://github.com/qbcore-framework/PolyZone
+    src: https://github.com/mkafrin/PolyZone/releases/download/v2.6.2/PolyZone.zip
 
   - action: waste_time # prevent github throttling
     seconds: 10
@@ -119,42 +119,42 @@ tasks:
   - action: download_github
     dest: ./resources/[qb]/qb-core
     ref: main
-    src: https://github.com/qbcore-framework/qb-core
+    src: https://github.com/better-qb/qb-core
 
   - action: download_github
     dest: ./resources/[qb]/qb-scoreboard
     ref: main
-    src: https://github.com/qbcore-framework/qb-scoreboard
+    src: https://github.com/better-qb/qb-scoreboard
 
   - action: download_github
     dest: ./resources/[qb]/qb-adminmenu
     ref: main
-    src: https://github.com/qbcore-framework/qb-adminmenu
+    src: https://github.com/better-qb/qb-adminmenu
 
   - action: download_github
     dest: ./resources/[qb]/qb-multicharacter
     ref: main
-    src: https://github.com/qbcore-framework/qb-multicharacter
+    src: https://github.com/better-qb/qb-multicharacter
 
   - action: download_github
     dest: ./resources/[qb]/qb-target
     ref: main
-    src: https://github.com/qbcore-framework/qb-target
+    src: https://github.com/better-qb/qb-target
 
   - action: download_github
     dest: ./resources/[qb]/qb-vehiclesales
     ref: main
-    src: https://github.com/qbcore-framework/qb-vehiclesales
+    src: https://github.com/better-qb/qb-vehiclesales
 
   - action: download_github
     dest: ./resources/[qb]/qb-vehicleshop
     ref: main
-    src: https://github.com/qbcore-framework/qb-vehicleshop
+    src: https://github.com/better-qb/qb-vehicleshop
 
   - action: download_github
     dest: ./resources/[qb]/qb-houserobbery
     ref: main
-    src: https://github.com/qbcore-framework/qb-houserobbery
+    src: https://github.com/better-qb/qb-houserobbery
 
   - action: waste_time # prevent github throttling
     seconds: 10
@@ -162,47 +162,47 @@ tasks:
   - action: download_github
     dest: ./resources/[qb]/qb-prison
     ref: main
-    src: https://github.com/qbcore-framework/qb-prison
+    src: https://github.com/better-qb/qb-prison
 
   - action: download_github
     dest: ./resources/[qb]/qb-hud
     ref: main
-    src: https://github.com/qbcore-framework/qb-hud
+    src: https://github.com/better-qb/qb-hud
 
   - action: download_github
     dest: ./resources/[qb]/qb-management
     ref: main
-    src: https://github.com/qbcore-framework/qb-management
+    src: https://github.com/better-qb/qb-management
 
   - action: download_github
     dest: ./resources/[qb]/qb-weed
     ref: main
-    src: https://github.com/qbcore-framework/qb-weed
+    src: https://github.com/better-qb/qb-weed
 
   - action: download_github
     dest: ./resources/[qb]/qb-lapraces
     ref: main
-    src: https://github.com/qbcore-framework/qb-lapraces
+    src: https://github.com/better-qb/qb-lapraces
 
   - action: download_github
     dest: ./resources/[qb]/qb-inventory
     ref: main
-    src: https://github.com/qbcore-framework/qb-inventory
+    src: https://github.com/better-qb/qb-inventory
 
   - action: download_github
     dest: ./resources/[qb]/qb-houses
     ref: main
-    src: https://github.com/qbcore-framework/qb-houses
+    src: https://github.com/better-qb/qb-houses
 
   - action: download_github
     dest: ./resources/[qb]/qb-garages
     ref: main
-    src: https://github.com/qbcore-framework/qb-garages
+    src: https://github.com/better-qb/qb-garages
 
   - action: download_github
     dest: ./resources/[qb]/qb-ambulancejob
     ref: main
-    src: https://github.com/qbcore-framework/qb-ambulancejob
+    src: https://github.com/better-qb/qb-ambulancejob
 
   - action: waste_time # prevent github throttling
     seconds: 10
@@ -210,47 +210,47 @@ tasks:
   - action: download_github
     dest: ./resources/[qb]/qb-radialmenu
     ref: main
-    src: https://github.com/qbcore-framework/qb-radialmenu
+    src: https://github.com/better-qb/qb-radialmenu
 
   - action: download_github
     dest: ./resources/[qb]/qb-crypto
     ref: main
-    src: https://github.com/qbcore-framework/qb-crypto
+    src: https://github.com/better-qb/qb-crypto
 
   - action: download_github
     dest: ./resources/[qb]/qb-weathersync
     ref: main
-    src: https://github.com/qbcore-framework/qb-weathersync
+    src: https://github.com/better-qb/qb-weathersync
 
   - action: download_github
     dest: ./resources/[qb]/qb-policejob
     ref: main
-    src: https://github.com/qbcore-framework/qb-policejob
+    src: https://github.com/better-qb/qb-policejob
 
   - action: download_github
     dest: ./resources/[qb]/qb-apartments
     ref: main
-    src: https://github.com/qbcore-framework/qb-apartments
+    src: https://github.com/better-qb/qb-apartments
 
   - action: download_github
     dest: ./resources/[qb]/qb-vehiclekeys
     ref: main
-    src: https://github.com/qbcore-framework/qb-vehiclekeys
+    src: https://github.com/better-qb/qb-vehiclekeys
 
   - action: download_github
     dest: ./resources/[qb]/qb-mechanicjob
     ref: main
-    src: https://github.com/qbcore-framework/qb-mechanicjob
+    src: https://github.com/better-qb/qb-mechanicjob
 
   - action: download_github
     dest: ./resources/[qb]/qb-phone
     ref: main
-    src: https://github.com/qbcore-framework/qb-phone
+    src: https://github.com/better-qb/qb-phone
 
   - action: download_github
     dest: ./resources/[qb]/qb-vineyard
     ref: main
-    src: https://github.com/qbcore-framework/qb-vineyard
+    src: https://github.com/better-qb/qb-vineyard
 
   - action: waste_time # prevent github throttling
     seconds: 10
@@ -258,47 +258,47 @@ tasks:
   - action: download_github
     dest: ./resources/[qb]/qb-weapons
     ref: main
-    src: https://github.com/qbcore-framework/qb-weapons
+    src: https://github.com/better-qb/qb-weapons
 
   - action: download_github
     dest: ./resources/[qb]/qb-scrapyard
     ref: main
-    src: https://github.com/qbcore-framework/qb-scrapyard
+    src: https://github.com/better-qb/qb-scrapyard
 
   - action: download_github
     dest: ./resources/[qb]/qb-towjob
     ref: main
-    src: https://github.com/qbcore-framework/qb-towjob
+    src: https://github.com/better-qb/qb-towjob
 
   - action: download_github
     dest: ./resources/[qb]/qb-streetraces
     ref: main
-    src: https://github.com/qbcore-framework/qb-streetraces
+    src: https://github.com/better-qb/qb-streetraces
 
   - action: download_github
     dest: ./resources/[qb]/qb-storerobbery
     ref: main
-    src: https://github.com/qbcore-framework/qb-storerobbery
+    src: https://github.com/better-qb/qb-storerobbery
 
   - action: download_github
     dest: ./resources/[qb]/qb-spawn
     ref: main
-    src: https://github.com/qbcore-framework/qb-spawn
+    src: https://github.com/better-qb/qb-spawn
 
   - action: download_github
     dest: ./resources/[qb]/qb-smallresources
     ref: main
-    src: https://github.com/qbcore-framework/qb-smallresources
+    src: https://github.com/better-qb/qb-smallresources
 
   - action: download_github
     dest: ./resources/[qb]/qb-recyclejob
     ref: main
-    src: https://github.com/qbcore-framework/qb-recyclejob
+    src: https://github.com/better-qb/qb-recyclejob
 
   - action: download_github
     dest: ./resources/[qb]/qb-crafting
     ref: main
-    src: https://github.com/qbcore-framework/qb-crafting
+    src: https://github.com/better-qb/qb-crafting
 
   - action: waste_time # prevent github throttling
     seconds: 10
@@ -306,52 +306,52 @@ tasks:
   - action: download_github
     dest: ./resources/[qb]/qb-diving
     ref: main
-    src: https://github.com/qbcore-framework/qb-diving
+    src: https://github.com/better-qb/qb-diving
 
   - action: download_github
     dest: ./resources/[qb]/qb-cityhall
     ref: main
-    src: https://github.com/qbcore-framework/qb-cityhall
+    src: https://github.com/better-qb/qb-cityhall
 
   - action: download_github
     dest: ./resources/[qb]/qb-truckrobbery
     ref: main
-    src: https://github.com/qbcore-framework/qb-truckrobbery
+    src: https://github.com/better-qb/qb-truckrobbery
 
   - action: download_github
     dest: ./resources/[qb]/qb-pawnshop
     ref: main
-    src: https://github.com/qbcore-framework/qb-pawnshop
+    src: https://github.com/better-qb/qb-pawnshop
 
   - action: download_github
     dest: ./resources/[qb]/qb-minigames
     ref: main
-    src: https://github.com/qbcore-framework/qb-minigames
+    src: https://github.com/better-qb/qb-minigames
 
   - action: download_github
     dest: ./resources/[qb]/qb-taxijob
     ref: main
-    src: https://github.com/qbcore-framework/qb-taxijob
+    src: https://github.com/better-qb/qb-taxijob
 
   - action: download_github
     dest: ./resources/[qb]/qb-busjob
     ref: main
-    src: https://github.com/qbcore-framework/qb-busjob
+    src: https://github.com/better-qb/qb-busjob
 
   - action: download_github
     dest: ./resources/[qb]/qb-newsjob
     ref: main
-    src: https://github.com/qbcore-framework/qb-newsjob
+    src: https://github.com/better-qb/qb-newsjob
 
   - action: download_github
     dest: ./resources/[qb]/qb-fuel
     ref: main
-    src: https://github.com/qbcore-framework/qb-fuel
+    src: https://github.com/better-qb/qb-fuel
 
   - action: download_github
     dest: ./resources/[qb]/qb-jewelery
     ref: main
-    src: https://github.com/qbcore-framework/qb-jewelery
+    src: https://github.com/better-qb/qb-jewelery
 
   - action: waste_time # prevent github throttling
     seconds: 10
@@ -359,52 +359,52 @@ tasks:
   - action: download_github
     dest: ./resources/[qb]/qb-bankrobbery
     ref: main
-    src: https://github.com/qbcore-framework/qb-bankrobbery
+    src: https://github.com/better-qb/qb-bankrobbery
 
   - action: download_github
     dest: ./resources/[qb]/qb-banking
     ref: main
-    src: https://github.com/qbcore-framework/qb-banking
+    src: https://github.com/better-qb/qb-banking
 
   - action: download_github
     dest: ./resources/[qb]/qb-clothing
     ref: main
-    src: https://github.com/qbcore-framework/qb-clothing
+    src: https://github.com/better-qb/qb-clothing
 
   - action: download_github
     dest: ./resources/[qb]/qb-hotdogjob
     ref: main
-    src: https://github.com/qbcore-framework/qb-hotdogjob
+    src: https://github.com/better-qb/qb-hotdogjob
 
   - action: download_github
     dest: ./resources/[qb]/qb-doorlock
     ref: main
-    src: https://github.com/qbcore-framework/qb-doorlock
+    src: https://github.com/better-qb/qb-doorlock
 
   - action: download_github
     dest: ./resources/[qb]/qb-garbagejob
     ref: main
-    src: https://github.com/qbcore-framework/qb-garbagejob
+    src: https://github.com/better-qb/qb-garbagejob
 
   - action: download_github
     dest: ./resources/[qb]/qb-drugs
     ref: main
-    src: https://github.com/qbcore-framework/qb-drugs
+    src: https://github.com/better-qb/qb-drugs
 
   - action: download_github
     dest: ./resources/[qb]/qb-shops
     ref: main
-    src: https://github.com/qbcore-framework/qb-shops
+    src: https://github.com/better-qb/qb-shops
 
   - action: download_github
     dest: ./resources/[qb]/qb-interior
     ref: main
-    src: https://github.com/qbcore-framework/qb-interior
+    src: https://github.com/better-qb/qb-interior
 
   - action: download_github
     dest: ./resources/[qb]/qb-menu
     ref: main
-    src: https://github.com/qbcore-framework/qb-menu
+    src: https://github.com/better-qb/qb-menu
 
   - action: waste_time # prevent github throttling
     seconds: 10
@@ -412,12 +412,12 @@ tasks:
   - action: download_github
     dest: ./resources/[qb]/qb-input
     ref: main
-    src: https://github.com/qbcore-framework/qb-input
+    src: https://github.com/better-qb/qb-input
 
   - action: download_github
     dest: ./resources/[qb]/qb-loading
     ref: main
-    src: https://github.com/qbcore-framework/qb-loading
+    src: https://github.com/better-qb/qb-loading
 
   # Clean up
   - action: remove_path
