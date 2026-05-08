@@ -1,4 +1,4 @@
--- Dumping structure for table bazagen.apartments
+-- apartments
 CREATE TABLE IF NOT EXISTS `apartments` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -8,11 +8,9 @@ CREATE TABLE IF NOT EXISTS `apartments` (
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`),
   KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.apartments: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.bank_accounts
+-- bank_accounts
 CREATE TABLE IF NOT EXISTS `bank_accounts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -20,13 +18,11 @@ CREATE TABLE IF NOT EXISTS `bank_accounts` (
   `account_balance` int(11) NOT NULL DEFAULT 0,
   `account_type` enum('shared','job','gang') NOT NULL,
   `users` longtext DEFAULT '[]',
-  PRIMARY KEY (`id`) USING BTREE,
+  PRIMARY KEY (`id`),
   UNIQUE KEY `account_name` (`account_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.bank_accounts: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.bank_statements
+-- bank_statements
 CREATE TABLE IF NOT EXISTS `bank_statements` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -35,13 +31,11 @@ CREATE TABLE IF NOT EXISTS `bank_statements` (
   `reason` varchar(50) DEFAULT NULL,
   `statement_type` enum('deposit','withdraw') DEFAULT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  PRIMARY KEY (`id`) USING BTREE,
+  PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.bank_statements: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.bans
+-- bans
 CREATE TABLE IF NOT EXISTS `bans` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -55,21 +49,17 @@ CREATE TABLE IF NOT EXISTS `bans` (
   KEY `license` (`license`),
   KEY `discord` (`discord`),
   KEY `ip` (`ip`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.bans: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.crypto
+-- crypto
 CREATE TABLE IF NOT EXISTS `crypto` (
   `crypto` varchar(50) NOT NULL DEFAULT 'qbit',
   `worth` int(11) NOT NULL DEFAULT 0,
   `history` text DEFAULT NULL,
   PRIMARY KEY (`crypto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.crypto: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.crypto_transactions
+-- crypto_transactions
 CREATE TABLE IF NOT EXISTS `crypto_transactions` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -78,11 +68,9 @@ CREATE TABLE IF NOT EXISTS `crypto_transactions` (
   `date` timestamp NULL DEFAULT current_timestamp(),
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.crypto_transactions: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.dealers
+-- dealers
 CREATE TABLE IF NOT EXISTS `dealers` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) NOT NULL DEFAULT '0',
@@ -90,11 +78,9 @@ CREATE TABLE IF NOT EXISTS `dealers` (
   `time` longtext DEFAULT NULL,
   `createdby` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.dealers: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.houselocations
+-- houselocations
 CREATE TABLE IF NOT EXISTS `houselocations` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) DEFAULT NULL,
@@ -106,11 +92,9 @@ CREATE TABLE IF NOT EXISTS `houselocations` (
   `garage` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `name` (`name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.houselocations: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.house_plants
+-- house_plants
 CREATE TABLE IF NOT EXISTS `house_plants` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `building` varchar(50) DEFAULT NULL,
@@ -125,22 +109,18 @@ CREATE TABLE IF NOT EXISTS `house_plants` (
   PRIMARY KEY (`id`),
   KEY `building` (`building`),
   KEY `plantid` (`plantid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.house_plants: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.inventories
+-- inventories
 CREATE TABLE IF NOT EXISTS `inventories` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `identifier` varchar(50) NOT NULL,
   `items` longtext DEFAULT '[]',
   PRIMARY KEY (`identifier`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.inventories: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.lapraces
+-- lapraces
 CREATE TABLE IF NOT EXISTS `lapraces` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) DEFAULT NULL,
@@ -151,11 +131,9 @@ CREATE TABLE IF NOT EXISTS `lapraces` (
   `raceid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `raceid` (`raceid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.lapraces: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.occasion_vehicles
+-- occasion_vehicles
 CREATE TABLE IF NOT EXISTS `occasion_vehicles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `seller` varchar(50) DEFAULT NULL,
@@ -167,20 +145,16 @@ CREATE TABLE IF NOT EXISTS `occasion_vehicles` (
   `occasionid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `occasionId` (`occasionid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.occasion_vehicles: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.phone_gallery
+-- phone_gallery
 CREATE TABLE IF NOT EXISTS `phone_gallery` (
   `citizenid` varchar(11) NOT NULL,
   `image` varchar(255) NOT NULL,
   `date` timestamp NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.phone_gallery: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.phone_invoices
+-- phone_invoices
 CREATE TABLE IF NOT EXISTS `phone_invoices` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -190,11 +164,9 @@ CREATE TABLE IF NOT EXISTS `phone_invoices` (
   `sendercitizenid` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.phone_invoices: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.phone_messages
+-- phone_messages
 CREATE TABLE IF NOT EXISTS `phone_messages` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -203,11 +175,9 @@ CREATE TABLE IF NOT EXISTS `phone_messages` (
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`),
   KEY `number` (`number`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.phone_messages: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.phone_tweets
+-- phone_tweets
 CREATE TABLE IF NOT EXISTS `phone_tweets` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -220,11 +190,9 @@ CREATE TABLE IF NOT EXISTS `phone_tweets` (
   `tweetId` varchar(25) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.phone_tweets: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.players
+-- players
 CREATE TABLE IF NOT EXISTS `players` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `userId` int(11) DEFAULT NULL,
@@ -245,11 +213,9 @@ CREATE TABLE IF NOT EXISTS `players` (
   KEY `id` (`id`),
   KEY `last_updated` (`last_updated`),
   KEY `license` (`license`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.players: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.playerskins
+-- playerskins
 CREATE TABLE IF NOT EXISTS `playerskins` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) NOT NULL,
@@ -259,11 +225,9 @@ CREATE TABLE IF NOT EXISTS `playerskins` (
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`),
   KEY `active` (`active`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.playerskins: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.player_contacts
+-- player_contacts
 CREATE TABLE IF NOT EXISTS `player_contacts` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -272,11 +236,9 @@ CREATE TABLE IF NOT EXISTS `player_contacts` (
   `iban` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.player_contacts: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.player_houses
+-- player_houses
 CREATE TABLE IF NOT EXISTS `player_houses` (
   `id` int(255) NOT NULL AUTO_INCREMENT,
   `house` varchar(50) NOT NULL,
@@ -291,11 +253,9 @@ CREATE TABLE IF NOT EXISTS `player_houses` (
   KEY `house` (`house`),
   KEY `citizenid` (`citizenid`),
   KEY `identifier` (`identifier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.player_houses: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.player_mails
+-- player_mails
 CREATE TABLE IF NOT EXISTS `player_mails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -308,11 +268,9 @@ CREATE TABLE IF NOT EXISTS `player_mails` (
   `button` text DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.player_mails: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.player_outfits
+-- player_outfits
 CREATE TABLE IF NOT EXISTS `player_outfits` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `citizenid` varchar(11) DEFAULT NULL,
@@ -323,18 +281,16 @@ CREATE TABLE IF NOT EXISTS `player_outfits` (
   PRIMARY KEY (`id`),
   KEY `citizenid` (`citizenid`),
   KEY `outfitId` (`outfitId`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.player_outfits: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.player_vehicles
+-- player_vehicles
 CREATE TABLE IF NOT EXISTS `player_vehicles` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `license` varchar(50) DEFAULT NULL,
   `citizenid` varchar(11) DEFAULT NULL,
   `vehicle` varchar(50) DEFAULT NULL,
   `hash` varchar(50) DEFAULT NULL,
-  `mods` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL,
+  `mods` longtext DEFAULT NULL,
   `plate` varchar(8) NOT NULL,
   `fakeplate` varchar(8) DEFAULT NULL,
   `garage` varchar(50) DEFAULT NULL,
@@ -343,7 +299,7 @@ CREATE TABLE IF NOT EXISTS `player_vehicles` (
   `body` float DEFAULT 1000,
   `state` int(11) DEFAULT 1,
   `depotprice` int(11) NOT NULL DEFAULT 0,
-  `drivingdistance` int(50) DEFAULT NULL,
+  `drivingdistance` bigint(20) DEFAULT NULL,
   `status` text DEFAULT NULL,
   `balance` int(11) NOT NULL DEFAULT 0,
   `paymentamount` int(11) NOT NULL DEFAULT 0,
@@ -353,11 +309,9 @@ CREATE TABLE IF NOT EXISTS `player_vehicles` (
   KEY `plate` (`plate`),
   KEY `citizenid` (`citizenid`),
   KEY `license` (`license`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- Dumping data for table bazagen.player_vehicles: ~0 rows (approximately)
-
--- Dumping structure for table bazagen.player_warns
+-- player_warns
 CREATE TABLE IF NOT EXISTS `player_warns` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `senderIdentifier` varchar(50) DEFAULT NULL,
@@ -365,4 +319,4 @@ CREATE TABLE IF NOT EXISTS `player_warns` (
   `reason` text DEFAULT NULL,
   `warnId` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_uca1400_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
